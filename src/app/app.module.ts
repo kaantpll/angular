@@ -6,6 +6,13 @@ import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product/product.component';
 import { CategoryComponent } from './components/category/category.component';
 import { NaviComponent } from './components/navi/navi.component';
+import { VatAddedPipe } from './pipes/vat-added.pipe';
+import {FormsModule} from "@angular/forms";
+import { from } from 'rxjs';
+import {ToastrModule} from "ngx-toastr";
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component'
 
 @NgModule({
   declarations: [
@@ -13,11 +20,19 @@ import { NaviComponent } from './components/navi/navi.component';
     ProductComponent,
     CategoryComponent,
     NaviComponent,
+    VatAddedPipe,
+    FilterPipePipe,
+    CartSummaryComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot({
+      positionClass:"toast-bottom-right"
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
